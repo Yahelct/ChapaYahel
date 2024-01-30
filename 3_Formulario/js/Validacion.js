@@ -3,7 +3,7 @@ function validar(formulario){
         alert("Escriba por lo menos mas de 3 caracteres en el campo nombre");
         formulario.nombre.focus();
     }
-    
+
     var checkOK = "qwertyuiopasdfghjklzxcvbnmñ"+"QWERTYUIOPASDFGHJKLÑZXCVBNM";
 
     var checkString = formulario.nombre.value;
@@ -11,7 +11,7 @@ function validar(formulario){
     alert(checkString);
 
     var todoesvalido = true;
-
+    
     for(var i = 0; i < checkString.length; i++){
         var ch = checkString.charAt(i);
         for(var j = 0; j < checkOK.length; j++){
