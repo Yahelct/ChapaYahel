@@ -1,9 +1,9 @@
-/* styles.css */
 
 @font-face {
-    font-family: 'Arco';
-    src: url('ruta-de-la-tipografia/arco.ttf') format('truetype');
+    font-family: 'Arco', sans-serif;
+    src: url('./ARCO.ttf') format('truetype');
 }
+
 
 body {
     font-family: 'Arco', sans-serif;
@@ -64,8 +64,8 @@ main {
 #contenedor-principal {
     max-width: 800px;
     margin: 0 auto;
-    border: 1px solid #000000; /* Borde gris */
+    border: 1px solid #000000; 
     border-radius: 10px;
     overflow: hidden;
-    background-color: #98C1D9; /* Fondo azul para el área afuera del borde */
+    background-color: #98C1D9; 
 }
