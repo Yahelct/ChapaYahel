@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/main.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>EXAMEN</h1>
+        <label for="capital"> Capital :</label>
+        <input type="text" name="capital" id="capital" placeholder="Ejemplo: 570">
+        <span id="mensaje" class="error-message"></span>
+        <br><br>
+
+        <label for="porcentaje">Porcentaje :</label>
+        <select name="porcentaje" id="porcentaje">
+            <option value="39">39%</option>
+        </select>
+        <br><br>
+
+        <label for="dias">Días :</label>
+        <select name="dias" id="dias">
+            <option value="28">28</option>
+            <option value="56">56</option>
+            <option value="112">112</option>
+        </select>
+        <br><br>
+
+        <button id="boton">Calcular</button>
+        <br><br>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Día</th>
+                    <th>Resultado</th>
+                </tr>
+            </thead>
+            <tbody id="tablaResultados"></tbody>
+        </table>
+
+        <br>
+
+        <span id="Resultados"></span>
+    </div>
+</body>
+</html>
