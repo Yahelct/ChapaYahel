@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reparto Anual de Utilidades</title>
+</head>
+<body>
+    <h2>Reparto Anual de Utilidades</h2>
+
+    <form id="profitSharingForm">
+        <label for="salary">Salario Mensual:</label>
+        <input type="number" id="salary" required>
+
+        <label for="yearsOfWork">Años de Antigüedad:</label>
+        <input type="number" id="yearsOfWork" required>
+
+        <button type="button" onclick="calcularUtilidades()">Calcular</button>
+    </form>
+
+    <h3>Resultado</h3>
+    <p id="result"></p>
+
+    <script src="js/utilidad.js"></script>
+</body>
+</html>
