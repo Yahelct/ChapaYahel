@@ -1,31 +1,73 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personajes de Jujutsu Kaisen</title>
+    <title>Conversor de Divisas</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <header>
-        <h1>Personajes de Jujutsu Kaisen</h1>
-    </header>
-    <main>
-        <section id="search-section">
-            <form id="search-form"> 
-                <input type="text" id="search-input" placeholder="Buscar personaje...">
-                <button id="search-button">Buscar</button>
-            </form>
-        </section>
-        <section id="summary-section">
-            <h2>Resumen</h2>
-            <p>Aquí aparecerá un resumen de los personajes de Jujutsu Kaisen.</p>
-        </section>
-        <section id="results-section">
-            
-        </section>
-    </main>
-    <script src="js/datos.js"></script>
+    <div class="container">
+        <h1>Conversor de Divisas</h1>
+        <div class="form-group">
+            <label for="amount">Monto:</label>
+            <input type="number" id="amount" placeholder="Ingrese el monto">
+        </div>
+        <div class="form-group">
+            <label for="from">De:</label>
+            <select id="from">
+                <option value="USD">USD - Dólar estadounidense</option>
+                <option value="EUR">EUR - Euro</option>
+                <option value="MXN">MXN - Peso mexicano</option>
+                <option value="GBP">GBP - Libra esterlina</option>
+                <option value="JPY">JPY - Yen japonés</option>
+                <option value="CAD">CAD - Dólar canadiense</option>
+                <option value="AUD">AUD - Dólar australiano</option>
+                <option value="CHF">CHF - Franco suizo</option>
+                <option value="CNY">CNY - Yuan chino</option>
+                <option value="NZD">NZD - Dólar neozelandés</option>
+                <option value="SEK">SEK - Corona sueca</option>
+                <option value="NOK">NOK - Corona noruega</option>
+                <option value="RUB">RUB - Rublo ruso</option>
+                <option value="SGD">SGD - Dólar de Singapur</option>
+                <option value="INR">INR - Rupia india</option>
+                <option value="HKD">HKD - Dólar de Hong Kong</option>
+                <option value="BRL">BRL - Real brasileño</option>
+                <option value="KRW">KRW - Won surcoreano</option>
+                <option value="TRY">TRY - Lira turca</option>
+                <option value="ZAR">ZAR - Rand sudafricano</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="to">A:</label>
+            <select id="to">
+                <option value="USD">USD - Dólar estadounidense</option>
+                <option value="EUR">EUR - Euro</option>
+                <option value="MXN">MXN - Peso mexicano</option>
+                <option value="GBP">GBP - Libra esterlina</option>
+                <option value="JPY">JPY - Yen japonés</option>
+                <option value="CAD">CAD - Dólar canadiense</option>
+                <option value="AUD">AUD - Dólar australiano</option>
+                <option value="CHF">CHF - Franco suizo</option>
+                <option value="CNY">CNY - Yuan chino</option>
+                <option value="NZD">NZD - Dólar neozelandés</option>
+                <option value="SEK">SEK - Corona sueca</option>
+                <option value="NOK">NOK - Corona noruega</option>
+                <option value="RUB">RUB - Rublo ruso</option>
+                <option value="SGD">SGD - Dólar de Singapur</option>
+                <option value="INR">INR - Rupia india</option>
+                <option value="HKD">HKD - Dólar de Hong Kong</option>
+                <option value="BRL">BRL - Real brasileño</option>
+                <option value="KRW">KRW - Won surcoreano</option>
+                <option value="TRY">TRY - Lira turca</option>
+                <option value="ZAR">ZAR - Rand sudafricano</option>
+            </select>
+        </div>
+        <button onclick="convertir()">Convertir</button>
+        <div id="resultado"></div>
+    </div>
+
+    <script src="js/fetch.js"></script>
 </body>
 </html>
