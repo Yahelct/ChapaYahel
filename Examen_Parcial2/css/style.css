@@ -1,6 +1,6 @@
 
 body {
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'ARCO', 'Courier New', Courier, monospace;
     background-image: url('../img/fondo.png');
     background-size: cover;
     background-position: center;
@@ -11,16 +11,22 @@ body {
     margin: 0;
 }
 
+@font-face {
+    font-family: 'ARCO';
+    src: url('fonts/ARCO.ttf') format('truetype');
+    
+}
+
 #conversor {
     background-color: #fafafa;
     text-align: center;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
     padding: 30px;
     border-radius: 12px;
-    max-width: 800px; /* Ajustar el ancho máximo */
+    max-width: 800px;
     margin: 0 auto;
-    display: flex; /* Cambiar la disposición a flex */
-    flex-direction: column; /* Alinear verticalmente */
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
@@ -31,8 +37,8 @@ input, select, button {
     border-radius: 8px;
     border: 2px solid #ccc;
     width: calc(100% - 24px);
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 16px;
+    font-family: 'ARCO', 'Courier New', Courier, monospace; 
+    font-size: 16px; 
     outline: none;
 }
 
@@ -48,14 +54,29 @@ button:hover {
     background-color: #45a049;
 }
 
-/* Alineación de elementos */
 label {
     display: block;
     margin-top: 10px;
-    text-align: left; /* Alinear el texto a la izquierda */
+    text-align: left;
 }
 
-/* Ajustes adicionales */
 #conversor {
-    height: auto; /* Altura automática */
+    height: auto;
+}
+
+.select-container {
+    display: flex;
+    align-items: center;
+}
+
+.bandera {
+    width: 40px; 
+    height: auto; 
+    margin-left: 10px; 
+    vertical-align: middle; 
+}
+
+.divisa-container {
+    display: flex;
+    align-items: center;
 }

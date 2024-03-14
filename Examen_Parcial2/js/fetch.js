@@ -1,3 +1,4 @@
+
 window.addEventListener('DOMContentLoaded', function() {
     const divisaOrigen = document.getElementById('divisaOrigen').value.replace(/\s+/g, '_');
     document.getElementById('banderaOrigen').src = `banderas/${divisaOrigen}.png`;
@@ -39,4 +40,21 @@ async function convertirDivisas(monto, divisaOrigen, divisaDestino) {
         console.error('Error al realizar la solicitud:', error);
         document.getElementById('resultado').innerText = 'Cantidad No Valida "INGRESE VALORES POSITIVOS"';
     }
+}
+window.addEventListener('DOMContentLoaded', function() {
+    actualizarBandera('divisaOrigen', 'banderaOrigen');
+    actualizarBandera('divisaDestino', 'banderaDestino');
+});
+
+document.getElementById('divisaOrigen').addEventListener('change', function() {
+    actualizarBandera('divisaOrigen', 'banderaOrigen');
+});
+
+document.getElementById('divisaDestino').addEventListener('change', function() {
+    actualizarBandera('divisaDestino', 'banderaDestino');
+});
+
+function actualizarBandera(selectId, imgId) {
+    const divisa = document.getElementById(selectId).value.replace(/\s+/g, '_');
+    document.getElementById(imgId).src = `img/${divisa}.png`;
 }
