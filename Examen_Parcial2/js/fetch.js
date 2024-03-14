@@ -1,21 +1,42 @@
+window.addEventListener('DOMContentLoaded', function() {
+    const divisaOrigen = document.getElementById('divisaOrigen').value.replace(/\s+/g, '_');
+    document.getElementById('banderaOrigen').src = `banderas/${divisaOrigen}.png`;
+});
 
-function convertir() {
-    var amount = document.getElementById('amount').value;
-    var from = document.getElementById('from').value;
-    var to = document.getElementById('to').value;
+document.getElementById('divisaOrigen').addEventListener('change', function() {
+    const divisa = this.value.replace(/\s+/g, '_');
+    document.getElementById('banderaOrigen').src = `banderas/${divisa}.png`; 
+});
 
-    if (amount < 0) {
-        document.getElementById('resultado').innerHTML = "Error: No se pueden convertir números negativos";
-        return;
+document.getElementById('divisaDestino').addEventListener('change', function() {
+    const divisa = this.value.replace(/\s+/g, '_'); 
+    document.getElementById('banderaDestino').src = `banderas/${divisa}.png`; 
+});
+
+document.getElementById('convertir').addEventListener('click', function() {
+    const monto = document.getElementById('monto').value;
+    const divisaOrigen = document.getElementById('divisaOrigen').value;
+    const divisaDestino = document.getElementById('divisaDestino').value;
+
+    convertirDivisas(monto, divisaOrigen, divisaDestino);
+});
+
+async function convertirDivisas(monto, divisaOrigen, divisaDestino) {
+    const apiKey = 'c0abc24b1df8744a5b16253a'; // Aquí va tu API Key
+    const url = `https://v6.exchangerate-api.com/v6/${apiKey}/pair/${divisaOrigen}/${divisaDestino}/${monto}`;
+
+    try {
+        const response = await fetch(url);
+        const data = await response.json();
+
+        if (data.result === "success") {
+            document.getElementById('resultado').innerText =
+                `Conversion: ${monto} ${divisaOrigen} = ${data.conversion_result} ${divisaDestino}`;
+        } else {
+            document.getElementById('resultado').innerText = 'Ha ocurrido un error durante la conversión.';
+        }
+    } catch (error) {
+        console.error('Error al realizar la solicitud:', error);
+        document.getElementById('resultado').innerText = 'Cantidad No Valida "INGRESE VALORES POSITIVOS"';
     }
-
-    fetch(`https://api.exchangerate-api.com/v4/latest/${from}`)
-        .then(response => response.json())
-        .then(data => {
-            var conversionRate = data.rates[to];
-            var resultado = amount * conversionRate;
-            var formattedResult = resultado.toFixed(2);
-            document.getElementById('resultado').innerHTML = `${amount} ${from} = ${formattedResult} ${to}`;
-        })
-        .catch(error => console.error('Error al obtener el tipo de cambio:', error));
 }
