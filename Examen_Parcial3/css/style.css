@@ -1,0 +1,59 @@
+/* Estilos para el header */
+.header {
+    background-color: #26a69a; /* Cyan darken-2 */
+    padding: 10px 0;
+  }
+  
+  .header .container {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .header .navbar-brand {
+    font-size: 24px;
+    color: #fff;
+  }
+  
+  .header .navbar-toggler {
+    border: none;
+  }
+  
+  .header .navbar-toggler-icon {
+    background-color: #fff;
+  }
+  
+  .header .navbar-nav .nav-item {
+    margin-right: 10px;
+  }
+  
+  .header .nav-link {
+    color: #fff;
+    font-weight: bold;
+  }
+  
+  .header .nav-link:hover {
+    color: #f0f0f0;
+  }
+  
+  @media (max-width: 768px) {
+    .header .navbar-nav {
+      flex-direction: column;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .header .navbar-collapse {
+      background-color: #26a69a; /* Cyan darken-2 */
+      border-radius: 5px;
+    }
+  
+    .header .navbar-nav {
+      padding: 10px;
+    }
+  
+    .header .nav-item {
+      margin-right: 0;
+      margin-bottom: 10px;
+    }
+  }
+  
